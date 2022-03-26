@@ -1,0 +1,19 @@
+{
+  "name": "@lipe11/ecommerce-product-page",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "LANG=en_US.UTF-8 astro dev",
+    "start": "LANG=en_US.UTF-8 astro dev",
+    "build": "LANG=en_US.UTF-8 astro build",
+    "preview": "LANG=en_US.UTF-8 astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-svelte": "^0.5.1",
+    "astro": "^0.24.0",
+    "autoprefixer": "^10.4.2",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-load-config": "^3.1.3",
+    "sass": "^1.49.9"
+  }
+}

@@ -1,0 +1,58 @@
+@mixin font {
+  font-family: $font-family;
+  color: $dark-grayish-blue;
+  font-size: 1rem;
+}
+
+@mixin primary {
+  color: $orange;
+}
+
+@mixin dark {
+  color: $very-dark-blue;
+}
+
+@mixin neutral {
+  color: $dark-grayish-blue;
+}
+
+@mixin light {
+  color: $grayish-blue;
+}
+
+@mixin lighter {
+  color: $light-grayish-blue;
+}
+
+@mixin striked {
+  text-decoration: line-through;
+}
+
+@mixin bold {
+  font-weight: 700;
+}
+
+@mixin smallcaps {
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+}
+
+@mixin small {
+  font-size: 0.9rem;
+}
+
+@mixin smaller {
+  font-size: 0.7rem;
+}
+
+@mixin medium {
+  font-size: 1.2rem;
+}
+
+@mixin big {
+  font-size: 1.6rem;
+}
+
+@mixin bigger {
+  font-size: 2.6rem;
+}

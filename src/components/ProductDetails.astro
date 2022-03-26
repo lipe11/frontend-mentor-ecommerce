@@ -1,0 +1,73 @@
+---
+import { product } from '../state/catalog'
+---
+
+<div class="column">
+  <div class="supplier">{product.supplier}</div>
+  <h1 class="name">{product.name}</h1>
+  <p class="description">{product.description}</p>
+  <div class="prices">
+    <div class="row">
+      <span class="price">{product.salePrice}</span>
+      <span class="discount-tag">{product.discount}</span>
+    </div>
+    <span class="original-price">{product.originalPrice}</span>
+  </div>
+</div>
+
+<style lang="scss">
+  @import '../styles/shared';
+  .supplier {
+    @include small;
+    @include primary; 
+    @include bold; 
+    @include smallcaps;
+  }
+  .name {
+    @include bigger; 
+    @include dark; 
+    @include bold;
+    line-height: 1.1;
+  }
+  .description {
+    padding: 1em 0;
+    line-height: 1.6;
+  }
+  .price {
+    @include big; 
+    @include dark; 
+    @include bold;
+  }
+  .discount-tag {
+    @include small;
+    @include primary;
+    @include bold;
+    background-color: $pale-orange;
+    padding: 0.2em 0.6em;
+    border-radius: 5px;
+  }
+  .original-price {
+    @include light; 
+    @include bold; 
+    @include striked;
+  }
+  .row {
+    @include row;
+  }
+  .column {
+    @include column;
+  }
+  .prices {
+    @include row-spaced;
+  }
+  @media (min-width: $desktop-breakpoint) {
+    .column {
+      max-width: $column-width;
+    }
+    .prices {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5em;
+    }
+  }
+</style>

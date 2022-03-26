@@ -1,0 +1,54 @@
+@mixin column {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+@mixin row {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+@mixin row-spaced {
+  @include row;
+  justify-content: space-between;
+}
+
+@mixin stretch {
+  flex: 1;
+}
+
+@mixin shadow {
+  box-shadow: 0 1em 1.5em 0 $shadow;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $border;
+}
+
+@mixin outline {
+  border: 3px solid $orange;
+}
+
+@mixin fullscreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin overlay {
+  @include fullscreen;
+  background-color: $black-transparent;
+}
+
+@mixin round {
+  border-radius: 50%;
+}
+
+@mixin rounded {
+  border-radius: 10px;
+  overflow: hidden;
+}
