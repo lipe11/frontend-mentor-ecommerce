@@ -6,7 +6,7 @@
 
 <div class="gallery">
   <ImageSlider {modalStyle} />
-  <ThumbSelector />
+  <ThumbSelector {modalStyle} />
 </div>
 
 <style lang="scss">

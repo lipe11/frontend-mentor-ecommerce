@@ -1,11 +1,14 @@
 <script>
   import gallery from '../state/gallery'
-  const { index } = gallery
+  const { galleryIndex, modalIndex } = gallery
+  export let modalStyle
+
+  $: index = modalStyle ? $modalIndex : $galleryIndex
 </script>
 
 <div class="thumbs">
   {#each gallery.thumbs as thumb, i}
-    <div class={$index === i ? 'thumb active' : 'thumb'}>
+    <div class={index === i ? 'thumb active' : 'thumb'}>
       <img src={thumb} alt="thumb" on:click={() => gallery.set(i)} />
     </div>
   {/each}

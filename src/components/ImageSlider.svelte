@@ -2,8 +2,9 @@
   import FloatButton from './FloatButton.svelte'
   import gallery from '../state/gallery'
   export let modalStyle = false
-  const { index } = gallery
+  const { galleryIndex, modalIndex } = gallery
 
+  $: index = modalStyle ? $modalIndex : $galleryIndex
   $: prevStyle = modalStyle ? 'left: -1.5em' : 'left: 1em'
   $: nextStyle = modalStyle ? 'right: -1.5em' : 'right: 1em'
 </script>
@@ -16,7 +17,7 @@
   {#each gallery.images as image, i}
     <div
       class="image"
-      class:visible={i === $index}
+      class:visible={i === index}
       style="background-image: url({image})"
       on:click={gallery.toggleModal}
     />
