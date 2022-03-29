@@ -25,13 +25,13 @@ import '../styles/global.css'
         <Navbar client:load  />
         <Sidebar client:load />
       </header>
-      <section class="left">
+      <div class="left">
         <ImageGallery client:load modalStyle={false}/>
-      </section>
-      <section class="right">
+      </div>
+      <div class="right">
         <ProductDetails  />
         <AddToCart client:load />
-      </section>
+      </div>
     </main>
     <ImageGalleryModal client:load />
   </body>

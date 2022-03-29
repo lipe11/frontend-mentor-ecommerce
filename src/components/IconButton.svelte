@@ -13,6 +13,7 @@
   on:click|stopPropagation={onClick()}
 >
   <slot />
+  <span>{icon}</span>
   {#if tag > 0}
     <div class="tag" in:fly>{tag}</div>
   {/if}
@@ -23,6 +24,10 @@
   .dropdown-button {
     @include box;
     @include background-image;
+    & span {
+      color: transparent;
+      position: absolute;
+    }
   }
   .large {
     @include box-large;

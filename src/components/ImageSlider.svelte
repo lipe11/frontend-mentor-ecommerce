@@ -1,20 +1,26 @@
 <script>
   import FloatButton from './FloatButton.svelte'
-  export let url
-  export let onNext
-  export let onPrev
-  export let onClick
+  import gallery from '../state/gallery'
   export let modalStyle = false
+  const { index } = gallery
+
   $: prevStyle = modalStyle ? 'left: -1.5em' : 'left: 1em'
   $: nextStyle = modalStyle ? 'right: -1.5em' : 'right: 1em'
 </script>
 
 <div class="cover-image">
   <div class="controls" class:modalStyle>
-    <FloatButton icon="previous" onClick={onPrev} style={prevStyle} />
-    <FloatButton icon="next" onClick={onNext} style={nextStyle} />
+    <FloatButton icon="previous" onClick={gallery.prev} style={prevStyle} />
+    <FloatButton icon="next" onClick={gallery.next} style={nextStyle} />
   </div>
-  <div class="image" style="background-image: url({url})" on:click={onClick} />
+  {#each gallery.images as image, i}
+    <div
+      class="image"
+      class:visible={i === $index}
+      style="background-image: url({image})"
+      on:click={gallery.toggleModal}
+    />
+  {/each}
 </div>
 
 <style lang="scss">
@@ -31,14 +37,15 @@
     @include cover-image;
     min-width: 100%;
     min-height: 400px;
+    visibility: hidden;
   }
   .controls {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
-  .modalStyle {
-    display: flex !important;
+  .visible {
+    visibility: visible !important;
   }
   @media (min-width: $desktop-breakpoint) {
     .cover-image {
@@ -50,6 +57,9 @@
     }
     .controls {
       display: none;
+    }
+    .modalStyle {
+      display: flex !important;
     }
   }
 </style>

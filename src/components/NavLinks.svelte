@@ -5,7 +5,7 @@
 <nav class="links">
   <ul>
     {#each links as link}
-      <li><a href="/" alt="nowhere">{link}</a></li>
+      <li><a href="/">{link}</a></li>
     {/each}
   </ul>
 </nav>

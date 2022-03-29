@@ -2,10 +2,10 @@
   import ImageGallery from './ImageGallery.svelte'
   import IconButton from './IconButton.svelte'
   import gallery from '../state/gallery'
-  const { modalVisible } = gallery
+  const { modalOpened } = gallery
 </script>
 
-{#if $modalVisible}
+{#if $modalOpened}
   <div class="modal">
     <div class="overlay" on:click={gallery.toggleModal} />
     <div class="gallery">
